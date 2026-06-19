@@ -1,4 +1,4 @@
-# Minimal
+# MinimalRVA
 
 Personal blog theme powered by [Hugo](https://gohugo.io).
 A live demo is available [here](https://themes.gohugo.io/theme/minimal/).
