@@ -8,10 +8,11 @@
         {{ partial "tags" . }}
     </div>
 
-    <div align="start" class="content">{{ .Content }}</div>
+    <div text-align="start" class="content">{{ .Content }}</div>
 
     <!-- Related posts -->
-    {{ $related := first 3 (where (where (where .Site.Pages.ByDate.Reverse ".Type" "==" "post") ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
+    <!-- {{ $related := first 3 (where (where (where .Site.Pages.ByDate.Reverse ".Type" "==" "post") ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }} -->
+    {{ $related := site.RegularPages.Related . | first 3 }}
     {{ if $related }}
         <h4 class="page-header">Related</h4>
         {{ range $related }} {{ partial "list-item" . }} {{ end }}
